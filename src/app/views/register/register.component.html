@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="box">
+    <button (click)="back()"><-- Back to login</button>
+    <h3>Sign up!</h3>
+    <input
+      type="text"
+      placeholder="Username"
+      [(ngModel)]="user.username"
+      (keydown)="resetError()"
+    />
+    <input
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="user.password"
+      (keydown)="resetError()"
+    />
+    <button (click)="register()">Register</button>
+    <p *ngIf="isError">{{ errorMessage }}</p>
+    <p *ngIf="success">✅Success, please login</p>
+  </div>
+</div>
